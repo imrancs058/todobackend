@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TodoModule } from './todo/todo.module';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 
 @Module({
   imports: [
@@ -18,5 +20,7 @@ import { TodoModule } from './todo/todo.module';
     }),
     TodoModule,
   ],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
